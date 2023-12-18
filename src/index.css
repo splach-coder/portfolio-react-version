@@ -1,13 +1,50 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'VT323';
+  src: url('./assets/fonts/VT323-Regular.ttf') format('truetype');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'VT323', monospace;
+  font-weight: 400;
+  cursor: url('../images/cursor.cur'), auto;
+  scroll-behavior: smooth;
+}
+
+*::selection {
+  background: var(--active-blue);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-white);
+  transition: all 250ms ease;
+}
+
+a:hover {
+  color: var(--primary-purple);
+}
+
+body {
+  position: relative;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: var(--primary-black);
+  background-image: url('../images/bg-01.png');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  min-width: calc(100% - 120px);
+  min-height: 110vh;
+  border-left: 1px solid;
+  border-color: var(--primary-grey);
 }
