@@ -1,34 +1,58 @@
-import React from "react";
+import { useState } from "react";
 import pages from "../consts/Pages";
-
-console.log(pages);
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Header = ({ activePage }) => {
+  const [navState, setNavState] = useState(false);
+
+  const openNav = () => {
+    setNavState(true);
+  };
+
+  const closeNav = () => {
+    setNavState(false);
+  };
+
   return (
     <header>
-      <div className="container min-h-auto">
-        <div className="bg-black grid grid-cols-12 py-6 mx-[20px]">
-          <div className="col-span-4">
-            <div className="flex flex-col gap-y-1 text-desc leading-[20px] text-white">
-              <span>// splash-coder</span>
+      <div className="con min-h-auto">
+        <div className="bg-black grid grid-cols-12 py-6 ms-[20px]">
+          <div className="col-span-6 md:col-span-4">
+            <div className="flex flex-col gap-y-1 text-[16px] leading-[16px] md:text-desc md:leading-[20px] text-white">
+              <span>{"// splash-coder"}</span>
               <span className="text-purple">&nbsp;&nbsp;&nbsp;web_dev</span>
             </div>
           </div>
-          <div className="col-span-8">
-            <ul className="flex w-100 justify-end list-none text-navigation">
+          <div
+            className="col-span-6 text-right text-purple text-navigation md:hidden"
+            onClick={openNav}>
+            <FontAwesomeIcon icon={faBars} />
+          </div>
+          <div
+            className={`fixed left-0 top-0 w-screen h-screen z-50 flex items-center justify-center bg-black md:relative md:w-auto md:h-auto md:z-auto md:top-auto md:left-auto md:col-span-8 md:block ${
+              navState ? "block" : "hidden"
+            }`}>
+            <div
+              className="absolute top-4 right-6 text-purple text-navigation md:hidden"
+              onClick={closeNav}>
+              <FontAwesomeIcon icon={faXmark} />
+            </div>
+            <ul className="flex flex-col items-center justify-center gap-6 md:flex-row md:gap-0 md:w-100 md:justify-end list-none text-navigation">
               {pages.map((page) => {
                 return (
                   <li key={page.id}>
-                    <a
-                      key={page.id}
-                      href="#"
-                      className={`px-[22px] no-underline ease duration-200 transition-colors ${
+                    <Link
+                      to={'/' + page.route}
+                      className={`md:px-[10px] lg:px-[22px] no-underline ease duration-200 transition-colors ${
                         activePage === page.name.toLowerCase()
                           ? "text-ActiveBlue"
                           : "text-yellow hover:text-purple"
                       }`}>
                       _{page.name.toLowerCase()}
-                    </a>
+                    </Link>
                   </li>
                 );
               })}

@@ -3,35 +3,22 @@ import Layout from "../layouts/Layout";
 import TypeWriter from "../components/Typewriter/TypeWriter";
 import "../assets/styles/home.css";
 import Button from "../components/Button/Button";
+import SectionHeader from "../components/SectionHeader/SectionHeader";
+import ContactMe from "../components/ContactMe/ContactMe";
 
-const strings = [
-  "_Web designer ",
-  "_Frontend devlopper ",
-  "_backend devlopper ",
-];
-
-const SectionHeader = ({ icon, title, desc }) => (
-  <div className="flex flex-col items-center gap-y-3 mb-[50px]">
-    <div className="text-[31px] leading-[31px] text-purple">{icon}</div>
-    <div className="text-white text-[108px] leading-[86px]">{title}</div>
-    <div
-      className="text-yellow text-desc leading-[20px] text-center"
-      dangerouslySetInnerHTML={{ __html: desc }}
-    />
-  </div>
-);
+const strings = ["_Web designer ", "_Frontend dev ", "_Backend dev "];
 
 const getHome = () => {
   return (
-    <div className="container">
+    <div className="con">
       {/* welcoming section */}
       <section className="min-h-screen mx-[20px] bg-section">
         <div className="w-100 bg-black text-white pt-[90px] pb-[30px]">
           <div className="flex flex-col items-center">
             <div className="text-[18px] leading-[20px]">
-              // HI, I'M SPLASH-CODER, A...
+              {"// HI, I'M SPLASH-CODER, A..."}
             </div>
-            <div className="text-bigTitle flex leading-[98px] mt-[15px] ">
+            <div className="flex text-[30px] leading-[30px]  md:text-bigTitle  md:leading-[98px] mt-[15px] ">
               {`{"`}
               <span className="text-yellow">
                 <TypeWriter
@@ -63,12 +50,12 @@ const getHome = () => {
           desc="...Step into my world of innovative code. Experience the passion and expertise <br /> of a seasoned full-stack engineer. Welcome to my about me!"
         />
 
-        <div className="grid grid-cols-12 border-t-[1px] border-grey">
-          <div className=" col-span-6 underline text-white text-smallTitle p-[60px] leading-[40px] border-e-[1px] border-grey">
-            ...I have over 12 years of experience in web development, with a
+        <div className="grid grid-cols-12 border-t md:border-b border-grey">
+          <div className="col-span-12 md:col-span-6 underline text-white md:border-e-[1px] md:border-grey text-[18px] leading-[20px] md:text-smallTitle p-[20px] md:p-[60px] md:leading-[40px]">
+            ...I have over 1 years of experience in web development, with a
             strong background in both front-end and back-end technologies;
           </div>
-          <div className="col-span-6 text-desc text-yellow p-[60px] leading-[20px]">
+          <div className="col-span-12 border-y-[1px] md:border-t-0 border-grey md:col-span-6 text-[18px] leading-[18px] md:text-desc text-yellow p-[20px] md:p-[60px] md:leading-[20px]">
             …curabitur sit amet luctus tortor, sit amet ultrices ante. Maecenas
             convallis dui arcu, et tempor felis consectetur vel. Vestibulum ante
             ipsum primis in faucibus orci luctus et ultrices posuere cubilia
@@ -79,7 +66,7 @@ const getHome = () => {
             hac habitasse platea dictumst;
           </div>
         </div>
-
+        <div className="border-s border-grey w-0 h-12 md:h-24"></div>
         <Button path={"/about"}> {"{Read More}"} </Button>
       </section>
 
@@ -107,11 +94,11 @@ const getHome = () => {
         />
 
         <div className="px-5 pt-5 w-100 overflow-y-hidden w-full">
-          <div className="border border-grey text-[108px] leading-[86px] mb-[20px] text-white py-[20px] border-e ease duration-200 transition-colors flex justify-center bg-gradient-to-r from-transparent to-[#9b99ff30]  hover:bg-yellow">
+          <div className="border border-grey md:text-[108px] md:leading-[86px] mb-[20px] text-white py-[20px] border-e ease duration-200 transition-colors flex justify-center bg-gradient-to-r from-transparent to-[#9b99ff30]  hover:bg-yellow text-[30px] leading-[30px] ">
             {'{"'}
             <span className="text-purple">
               <TypeWriter
-                words={[" _Web designer "]}
+                words={[" _Web design "]}
                 loop="false"
                 cursorStyle={"_"}
                 typeSpeed={120}
@@ -119,11 +106,11 @@ const getHome = () => {
             </span>
             {'"}'}
           </div>
-          <div className="border border-grey text-[108px] leading-[86px] mb-[20px] text-white text-center py-[20px] border-e ease duration-200 transition-colors flex justify-center bg-gradient-to-r from-transparent to-[#2fcbef30] hover:bg-yellow ">
+          <div className="border border-grey text-[30px] leading-[30px] md:text-[108px] md:leading-[86px] mb-[20px] text-white text-center py-[20px] border-e ease duration-200 transition-colors flex justify-center bg-gradient-to-r from-transparent to-[#2fcbef30] hover:bg-yellow ">
             {'{"'}
             <span className=" text-ActiveBlue">
               <TypeWriter
-                words={[" _front-end developer "]}
+                words={[" _front-end dev "]}
                 loop="false"
                 cursorStyle={"_"}
                 typeSpeed={120}
@@ -131,11 +118,11 @@ const getHome = () => {
             </span>
             {'"}'}
           </div>
-          <div className="border border-grey text-[108px] leading-[86px] text-white text-center py-[20px] border-e ease duration-200 transition-colors flex justify-center bg-gradient-to-r from-transparent to-[#e6db7430] hover:bg-yellow">
+          <div className="border border-grey text-[30px] leading-[30px] md:text-[108px] md:leading-[86px] text-white text-center py-[20px] border-e ease duration-200 transition-colors flex justify-center bg-gradient-to-r from-transparent to-[#e6db7430] hover:bg-yellow">
             {'{"'}
             <span className="text-yellow hover:text-ActiveBlue">
               <TypeWriter
-                words={[" _back-end developer "]}
+                words={[" _back-end dev "]}
                 loop="false"
                 cursorStyle={"_"}
                 typeSpeed={120}
@@ -146,7 +133,7 @@ const getHome = () => {
         </div>
 
         {/* devider  */}
-        <div className="border-s border-grey w-0 h-36"></div>
+        <div className="border-s border-grey w-0 h-16 md:h-36"></div>
 
         <Button path={"/services"}>{"{all services}"}</Button>
       </section>
@@ -154,45 +141,7 @@ const getHome = () => {
       {/*empty section */}
       <section className="py-[100px] mx-[20px] bg-section"></section>
 
-      {/*contact section */}
-      <section className="mt-[150px] bg-black" id="contactme">
-        <SectionHeader
-          icon="{*}"
-          title="&lt;Contact me&gt;"
-          desc="...Unlock the gateway to connection. Reach out and let's embark
-          <br />
-          on a transformative journey together."
-        />
-
-        <div className="w-full pb-5 flex flex-col items-center">
-          <div className="w-[80%]">
-            <form action="#" className="flex flex-col gap-4">
-              <input
-                type="text"
-                id="name"
-                className="py-7  outline-none border-b border-grey bg-transparent text-purple text-desc leading-[20px] ease duration-200 transition-all focus:border-b-2 focus:border-purple placeholder:text-purple"
-                placeholder="_name*"
-              />
-              <input
-                type="email"
-                id="email"
-                className="py-7  outline-none border-b border-grey bg-transparent text-purple text-desc leading-[20px] ease duration-200 transition-all focus:border-b-2 focus:border-purple placeholder:text-purple "
-                placeholder="_email*"
-              />
-              <textarea
-                name="message"
-                id="message"
-                cols="30"
-                rows="5"
-                className="py-7  outline-none border-b border-grey bg-transparent text-purple text-desc leading-[20px] ease duration-200 transition-all focus:border-b-2 focus:border-purple placeholder:text-purple"
-                placeholder="_message*"></textarea>
-            </form>
-          </div>
-          {/* devider  */}
-          <div className="border-s border-grey w-0 h-24"></div>
-          <Button>{"{send}"}</Button>
-        </div>
-      </section>
+      <ContactMe />
     </div>
   );
 };
