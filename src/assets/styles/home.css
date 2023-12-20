@@ -1,0 +1,7 @@
+section.bg-section {
+    background: url('../images/bg-02.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-y: hidden;
+    background-repeat: no-repeat;
+}

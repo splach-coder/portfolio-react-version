@@ -13,38 +13,37 @@
   box-sizing: border-box;
   font-family: 'VT323', monospace;
   font-weight: 400;
-  cursor: url('../images/cursor.cur'), auto;
+  cursor: url('./assets/images/cursor.cur'), auto;
   scroll-behavior: smooth;
 }
 
 *::selection {
-  background: var(--active-blue);
+  @apply bg-ActiveBlue;
 }
 
 a {
   text-decoration: none;
-  color: var(--primary-white);
+  @apply text-white;
   transition: all 250ms ease;
 }
 
-a:hover {
-  color: var(--primary-purple);
-}
 
 body {
   position: relative;
   max-width: 100%;
+  min-height: 100vh;
   overflow-x: hidden;
-  background-color: var(--primary-black);
-  background-image: url('../images/bg-01.png');
+  @apply bg-black;
+  background-image: url('./assets/images/bg-01.png');
   background-position: top left;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 .container {
-  min-width: calc(100% - 120px);
-  min-height: 110vh;
+  width: calc(100% - 120px);
+  margin: 0 auto;
+  overflow-x: hidden;
   border-left: 1px solid;
-  border-color: var(--primary-grey);
+  @apply border-grey;
 }
