@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import Button from "../Button/Button";
-
+import { db } from "../../firebase.config";
+import { collection, addDoc } from "firebase/firestore";
+import Popup from "../PopUp/Popup";
+import { motion, AnimatePresence } from "framer-motion";
 const ContactMe = () => {
+  const emailsCollectionRef = collection(db, "emails");
+  const [popupOpen, setPopupOpen] = React.useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -59,18 +64,21 @@ const ContactMe = () => {
     e.preventDefault();
 
     if (validateForm()) {
-      console.log(formData);
-      /*try {
-        // Add data to the 'contacts' collection in Firestore
-        await firestore.collection("contacts").add(formData);
+      try {
+        //Add data to the 'emails' collection in Firestore
+        await addDoc(emailsCollectionRef, formData);
 
-        // Reset the form after successful submission
+        //Reset the form after successful submission
         setFormData({ name: "", email: "", message: "" });
+
+        setPopupOpen(true);
       } catch (error) {
         console.error("Error adding document: ", error);
-      }*/
+      }
     }
   };
+
+  const handleClose = () => setPopupOpen(false);
 
   return (
     <section className="mt-[150px] bg-black" id="contactme">
@@ -136,6 +144,21 @@ const ContactMe = () => {
           </form>
         </div>
       </div>
+
+      <AnimatePresence
+        // Disable any initial animations on children that
+        // are present when the component is first rendered
+        initial={false}
+        // Only render one component at a time.
+        // The exiting component will finish its exit
+        // animation before entering component is rendered
+        mode={true}
+        // Fires when all exiting nodes have completed animating out
+        onExitComplete={() => null}>
+        {popupOpen && (
+          <Popup handleClose={handleClose} text={"message sent succesfully"} />
+        )}
+      </AnimatePresence>
     </section>
   );
 };

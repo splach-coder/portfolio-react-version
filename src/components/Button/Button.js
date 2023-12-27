@@ -12,7 +12,7 @@ const buttonVariants = {
   hidden: { opacity: 0, scale: 0, transition: { duration: 0.3 } },
 };
 
-const Button = ({ children, path, type }) => {
+const Button = ({ children, path, type, onClick }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
   useEffect(() => {
@@ -25,6 +25,7 @@ const Button = ({ children, path, type }) => {
 
   return (
     <motion.button
+      onClick={onClick != undefined ? onClick : null}
       initial="hidden"
       animate={controls}
       ref={ref}
