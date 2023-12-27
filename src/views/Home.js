@@ -1,18 +1,105 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../layouts/Layout";
 import TypeWriter from "../components/Typewriter/TypeWriter";
 import "../assets/styles/home.css";
 import Button from "../components/Button/Button";
 import SectionHeader from "../components/SectionHeader/SectionHeader";
 import ContactMe from "../components/ContactMe/ContactMe";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const strings = ["_Web designer ", "_Frontend dev ", "_Backend dev "];
+const servicesVariants = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 300, damping: 24, duration: 1 },
+  },
+  hidden: { opacity: 0, y: 40, transition: { duration: 0.3 } },
+};
+
+const Services = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: 0.4, // Adjust the stagger duration as needed
+          },
+        },
+        hidden: {
+          transition: {
+            staggerChildren: 0.4, // Adjust the stagger duration as needed
+          },
+        },
+      }}
+      className="px-5 pt-5 w-100 overflow-y-hidden w-full"
+      initial="hidden"
+      animate={controls}>
+      <motion.div
+        className="border border-grey md:text-[108px] md:leading-[86px] mb-[20px] text-white py-[20px] border-e ease duration-200 transition-colors flex justify-center bg-gradient-to-r from-transparent to-[#9b99ff30]  hover:bg-yellow text-[30px] leading-[30px] "
+        ref={ref}
+        variants={servicesVariants}>
+        {'{"'}
+        <span className="text-purple">
+          <TypeWriter
+            words={[" _Web design "]}
+            loop="false"
+            cursorStyle={"_"}
+            typeSpeed={120}
+          />
+        </span>
+        {'"}'}
+      </motion.div>
+      <motion.div
+        className="border border-grey text-[30px] leading-[30px] md:text-[108px] md:leading-[86px] mb-[20px] text-white text-center py-[20px] border-e ease duration-200 transition-colors flex justify-center bg-gradient-to-r from-transparent to-[#2fcbef30] hover:bg-yellow "
+        ref={ref}
+        variants={servicesVariants}>
+        {'{"'}
+        <span className=" text-ActiveBlue">
+          <TypeWriter
+            words={[" _front-end dev "]}
+            loop="false"
+            cursorStyle={"_"}
+            typeSpeed={120}
+          />
+        </span>
+        {'"}'}
+      </motion.div>
+      <motion.div
+        className="border border-grey text-[30px] leading-[30px] md:text-[108px] md:leading-[86px] text-white text-center py-[20px] border-e ease duration-200 transition-colors flex justify-center bg-gradient-to-r from-transparent to-[#e6db7430] hover:bg-yellow"
+        ref={ref}
+        variants={servicesVariants}>
+        {'{"'}
+        <span className="text-yellow hover:text-ActiveBlue">
+          <TypeWriter
+            words={[" _back-end dev "]}
+            loop="false"
+            cursorStyle={"_"}
+            typeSpeed={120}
+          />
+        </span>
+        {'"}'}
+      </motion.div>
+    </motion.div>
+  );
+};
 
 const getHome = () => {
   return (
     <div className="con">
       {/* welcoming section */}
-      <section className="min-h-screen mx-[20px] bg-section">
+      <section className="min-h-screen ms-[20px] bg-section">
         <div className="w-100 bg-black text-white pt-[90px] pb-[30px]">
           <div className="flex flex-col items-center">
             <div className="text-[18px] leading-[20px]">
@@ -55,7 +142,7 @@ const getHome = () => {
             ...I have over 1 years of experience in web development, with a
             strong background in both front-end and back-end technologies;
           </div>
-          <div className="col-span-12 border-y-[1px] md:border-t-0 border-grey md:col-span-6 text-[18px] leading-[18px] md:text-desc text-yellow p-[20px] md:p-[60px] md:leading-[20px]">
+          <div className="col-span-12 border-y-[1px] md:border-y-0 border-grey md:col-span-6 text-[18px] leading-[18px] md:text-desc text-yellow p-[20px] md:p-[60px] md:leading-[20px]">
             …curabitur sit amet luctus tortor, sit amet ultrices ante. Maecenas
             convallis dui arcu, et tempor felis consectetur vel. Vestibulum ante
             ipsum primis in faucibus orci luctus et ultrices posuere cubilia
@@ -76,8 +163,7 @@ const getHome = () => {
           icon="(!)"
           title="&lt;portfolio&gt;"
           desc="...Welcome to my portfolio, where my creations come to life.
-          Explore the beauty of innovation <br />
-          and creativity. Embrace the extraordinary."
+          Explore the beauty of innovation and creativity. Embrace the extraordinary."
         />
       </section>
 
@@ -89,48 +175,10 @@ const getHome = () => {
           icon="{#}"
           title="&lt;services&gt;"
           desc=" ...Ignite your brand with bespoke services. Experience
-          transformative <br />
-          journeys that leave a lasting emotional impact."
+          transformative journeys that leave a lasting emotional impact."
         />
 
-        <div className="px-5 pt-5 w-100 overflow-y-hidden w-full">
-          <div className="border border-grey md:text-[108px] md:leading-[86px] mb-[20px] text-white py-[20px] border-e ease duration-200 transition-colors flex justify-center bg-gradient-to-r from-transparent to-[#9b99ff30]  hover:bg-yellow text-[30px] leading-[30px] ">
-            {'{"'}
-            <span className="text-purple">
-              <TypeWriter
-                words={[" _Web design "]}
-                loop="false"
-                cursorStyle={"_"}
-                typeSpeed={120}
-              />
-            </span>
-            {'"}'}
-          </div>
-          <div className="border border-grey text-[30px] leading-[30px] md:text-[108px] md:leading-[86px] mb-[20px] text-white text-center py-[20px] border-e ease duration-200 transition-colors flex justify-center bg-gradient-to-r from-transparent to-[#2fcbef30] hover:bg-yellow ">
-            {'{"'}
-            <span className=" text-ActiveBlue">
-              <TypeWriter
-                words={[" _front-end dev "]}
-                loop="false"
-                cursorStyle={"_"}
-                typeSpeed={120}
-              />
-            </span>
-            {'"}'}
-          </div>
-          <div className="border border-grey text-[30px] leading-[30px] md:text-[108px] md:leading-[86px] text-white text-center py-[20px] border-e ease duration-200 transition-colors flex justify-center bg-gradient-to-r from-transparent to-[#e6db7430] hover:bg-yellow">
-            {'{"'}
-            <span className="text-yellow hover:text-ActiveBlue">
-              <TypeWriter
-                words={[" _back-end dev "]}
-                loop="false"
-                cursorStyle={"_"}
-                typeSpeed={120}
-              />
-            </span>
-            {'"}'}
-          </div>
-        </div>
+        <Services />
 
         {/* devider  */}
         <div className="border-s border-grey w-0 h-16 md:h-36"></div>
@@ -139,7 +187,7 @@ const getHome = () => {
       </section>
 
       {/*empty section */}
-      <section className="py-[100px] mx-[20px] bg-section"></section>
+      <section className="py-[100px] ms-[20px] bg-section"></section>
 
       <ContactMe />
     </div>

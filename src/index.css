@@ -68,6 +68,7 @@ body {
 
 /* Large screens, typically laptops */
 @media (min-width: 1024px) {
+
   /* Your CSS styles for large screens go here */
   .con {
     width: calc(100% - 120px);

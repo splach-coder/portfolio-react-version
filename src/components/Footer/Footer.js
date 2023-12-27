@@ -53,7 +53,7 @@ const Footer = ({ activePage }) => {
               </div>
             </a>
           </div>
-          <div className="col-span-12 md:col-span-5 mt-10 md:mt-0 flex justify-center items-end md:justify-end md:items-start">
+          <div className="col-span-12 text-sm md:text-dsec md:col-span-5 mt-10 md:mt-0 flex justify-center md:justify-end md:items-start">
             Copyright ©{new Date().getFullYear() + " "} 
              splash-coder Portfolio
           </div>
