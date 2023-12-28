@@ -25,7 +25,7 @@ const Button = ({ children, path, type, onClick }) => {
 
   return (
     <motion.button
-      onClick={onClick != undefined ? onClick : null}
+      onClick={onClick !== undefined ? onClick : null}
       initial="hidden"
       animate={controls}
       ref={ref}

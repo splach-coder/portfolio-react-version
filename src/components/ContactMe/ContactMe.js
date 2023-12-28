@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 import { db } from "../../firebase.config";
 import { collection, addDoc } from "firebase/firestore";
 import Popup from "../PopUp/Popup";
-import { motion, AnimatePresence } from "framer-motion";
+import {  AnimatePresence } from "framer-motion";
 const ContactMe = () => {
   const emailsCollectionRef = collection(db, "emails");
   const [popupOpen, setPopupOpen] = React.useState(false);
