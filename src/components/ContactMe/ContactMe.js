@@ -81,7 +81,7 @@ const ContactMe = () => {
   const handleClose = () => setPopupOpen(false);
 
   return (
-    <section className="mt-[150px] bg-black" id="contactme">
+    <section className="ms-[20px] mt-[100px] md:mt-[150px] bg-black" id="contactme">
       <SectionHeader
         icon="{*}"
         title="&lt;Contact me&gt;"

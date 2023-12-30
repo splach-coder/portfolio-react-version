@@ -7,7 +7,7 @@ import ContactMe from "../components/ContactMe/ContactMe";
 const getServices = () => {
   return (
     <div className="con">
-      <section className="overflow-y-hidden">
+      <section className="ms-[20px] overflow-y-hidden">
         <div className="flex flex-col items-center mx-auto gap-7 max-w-[350px] md:max-w-3xl pt-[90px]">
           <div className="flex text-smallTitle leading-[30px] md:text-bigTitle md:leading-[98px] mt-[15px] text-white">
             {`{"`}

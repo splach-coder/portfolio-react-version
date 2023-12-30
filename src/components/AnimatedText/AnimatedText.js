@@ -21,12 +21,12 @@ const AnimatedCharacters = (props) => {
   // Framer Motion variant object, for controlling animation
   const item = {
     hidden: {
-      y: "200%",
-      transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.85 },
+      y: "100%",
+      transition: { ease: [0.355, 0.02, 0.415, 0.755], duration: 0.55 },
     },
     visible: {
       y: 0,
-      transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.75 },
+      transition: { ease: [0.355, 0.02, 0.415, 0.755], duration: 0.45 },
     },
   };
 

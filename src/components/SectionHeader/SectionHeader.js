@@ -34,7 +34,7 @@ const SectionHeader = ({ icon, title, desc }) => {
         <AnimatedText type="heading1" text={title} />
       </motion.div>
       <motion.div className="text-yellow text-[16px] leading-[16px] md:text-desc md:leading-[20px] text-center max-w-[400px] md:max-w-3xl">
-        <AnimatedText type="heading1" text={desc} />
+        <AnimatedText type="paragraph" text={desc} />
       </motion.div>
     </motion.div>
   );

@@ -11,13 +11,13 @@ const ServicesData = [
     id: nanoid(),
     title: "Frontend Development",
     description:
-      "Develop interactive and user-friendly interfaces using modern frontend frameworks like React or Vue.",
+      "Develop interactive and user-friendly interfaces using modern frontend frameworks like React.",
   },
   {
     id: nanoid(),
-    title: "Debugging and Troubleshooting",
+    title: "Backend Development",
     description:
-      "Identify and fix issues in existing code, ensuring smooth functionality of web applications.",
+      "Build dynamic and efficient backend systems through the utilization of cutting-edge technologies and frameworks.",
   },
   {
     id: nanoid(),
@@ -30,12 +30,6 @@ const ServicesData = [
     title: "Basic SEO Optimization",
     description:
       "Implement SEO best practices to improve the visibility of websites on search engines.",
-  },
-  {
-    id: nanoid(),
-    title: "Website Performance Optimization",
-    description:
-      "Optimize websites for speed and performance, ensuring a smooth user experience.",
   },
 ];
 

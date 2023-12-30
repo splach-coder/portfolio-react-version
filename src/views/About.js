@@ -4,12 +4,23 @@ import TypeWriter from "../components/Typewriter/TypeWriter";
 import ContactMe from "../components/ContactMe/ContactMe";
 import softSkillsArray from "../components/consts/SoftSkills";
 import SmallSection from "../components/SmallSection/SmallSection";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import variants from "../assets/styles/Variants";
 
 const GetAbout = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  React.useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
     <div className="con">
-      <section className="bg-section ms-[20px] min-h-[110vh] md:min-h-screen">
-        <div className="w-100 bg-black pt-[90px] pb-[30px] text-white">
+      <section className="bg-section ms-[20px] min-h-[80vh] md:min-h-screen">
+        <div className="w-100 bg-black pt-[50px] md:pt-[90px] pb-[30px] text-white">
           <div className="flex flex-col items-center mx-auto gap-7 max-w-4xl">
             <div className="flex text-smallTitle leading-[30px] md:text-bigTitle md:leading-[98px] mt-[15px] ">
               {`{"`}
@@ -23,28 +34,40 @@ const GetAbout = () => {
               </span>
               {`"}`}
             </div>
-            <div className="md:text-smallTitle text-yellow md:leading-[40px] text-center text-desc leading-[20px]">
+            <motion.div
+              variants={variants.paragraphVariants}
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              className="md:text-smallTitle text-yellow md:leading-[40px] text-center text-desc leading-[20px]">
               ...I have over 12 years of experience in web development, with a
               strong background in both front-end and back-end technologies.
               Nullam facilisis mollis mauris, vitae mollis leo viverra eu. In
               cursus commodo interdum;
-            </div>
-            <div className=" text-[16px] md:text-desc text-white md:leading-[16px] leading-[20px] text-center">
+            </motion.div>
+            <motion.div
+              variants={variants.paragraphVariants}
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              className=" text-[16px] md:text-desc text-white md:leading-[16px] leading-[20px] text-center">
               …lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
               facilisis mollis mauris, vitae mollis leo viverra eu. In cursus
               commodo interdum. Duis vitae ex massa. Quisque luctus diam.
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      <section className="mt-[150px]">
+      <section className="ms-[20px]  mt-[100px] md:mt-[150px]">
         <div className="text-white text-[30px] leading-[20px] md:text-[108px] md:leading-[96px] text-center mb-[50px]">
           &lt;what drives my work&gt;
         </div>
         <div className="grid grid-cols-12">
           {softSkillsArray.map((skill) => (
-            <SmallSection
+            <SmallSection             
+              motion={motion}
+              variants={variants}
               id={skill.id}
               icon={skill.icon}
               title={skill.skill}

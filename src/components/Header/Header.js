@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import pages from "../consts/Pages";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -211,4 +211,4 @@ const Header = ({ activePage }) => {
   );
 };
 
-export default Header;
+export default memo(Header);

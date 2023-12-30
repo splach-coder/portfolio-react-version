@@ -7,6 +7,7 @@ import SectionHeader from "../components/SectionHeader/SectionHeader";
 import ContactMe from "../components/ContactMe/ContactMe";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import variants from "../assets/styles/Variants";
 
 const strings = ["_Web designer ", "_Frontend dev ", "_Backend dev "];
 const servicesVariants = {
@@ -95,12 +96,20 @@ const Services = () => {
   );
 };
 
-const getHome = () => {
+const GetHome = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
     <div className="con">
       {/* welcoming section */}
-      <section className="min-h-screen ms-[20px] bg-section">
-        <div className="w-100 bg-black text-white pt-[90px] pb-[30px]">
+      <section className="min-h-[50vh] md:min-h-screen ms-[20px] bg-section">
+        <div className="w-100 bg-black text-white pt-[50px] md:pt-[90px] pb-[30px]">
           <div className="flex flex-col items-center">
             <div className="text-[18px] leading-[20px]">
               {"// HI, I'M SPLASH-CODER, A..."}
@@ -119,7 +128,7 @@ const getHome = () => {
             </div>
           </div>
 
-          <div className=" mt-28 text-center rotate-90">
+          <div className="mt-16 md:mt-28 text-center rotate-90">
             <span className="text-[31px] leading-[31px] p-[15px]">
               <a href="#about">{"==>"}</a>
             </span>
@@ -129,20 +138,30 @@ const getHome = () => {
 
       {/* about section */}
       <section
-        className="mt-[150px] bg-black flex flex-col items-center"
+        className="ms-[20px] mt-[100px] md:mt-[150px] bg-black flex flex-col items-center"
         id="about">
         <SectionHeader
           icon="{/}"
           title="&lt;about_me&gt;"
-          desc="...Step into my world of innovative code. Experience the passion and expertise <br /> of a seasoned full-stack engineer. Welcome to my about me!"
+          desc="...Step into my world of innovative code. Experience the passion and expertise of a seasoned full-stack engineer. Welcome to my about me!"
         />
 
         <div className="grid grid-cols-12 border-t md:border-b border-grey">
-          <div className="col-span-12 md:col-span-6 underline text-white md:border-e-[1px] md:border-grey text-[18px] leading-[20px] md:text-smallTitle p-[20px] md:p-[60px] md:leading-[40px]">
+          <motion.div
+            variants={variants.paragraphVariants}
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            className="col-span-12 md:col-span-6 underline text-white md:border-e-[1px] md:border-grey text-[18px] leading-[20px] md:text-smallTitle p-[20px] md:p-[60px] md:leading-[40px]">
             ...I have over 1 years of experience in web development, with a
             strong background in both front-end and back-end technologies;
-          </div>
-          <div className="col-span-12 border-y-[1px] md:border-y-0 border-grey md:col-span-6 text-[18px] leading-[18px] md:text-desc text-yellow p-[20px] md:p-[60px] md:leading-[20px]">
+          </motion.div>
+          <motion.div
+            variants={variants.paragraphVariants}
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            className="col-span-12 border-y-[1px] md:border-y-0 border-grey md:col-span-6 text-[18px] leading-[18px] md:text-desc text-yellow p-[20px] md:p-[60px] md:leading-[20px]">
             …curabitur sit amet luctus tortor, sit amet ultrices ante. Maecenas
             convallis dui arcu, et tempor felis consectetur vel. Vestibulum ante
             ipsum primis in faucibus orci luctus et ultrices posuere cubilia
@@ -151,14 +170,16 @@ const getHome = () => {
             arcu. Quisque feugiat rhoncus arcu, a tincidunt arcu lacinia ac.
             Maecenas molestie vel ante in finibus. Sed sit amet ligula eros. In
             hac habitasse platea dictumst;
-          </div>
+          </motion.div>
         </div>
         <div className="border-s border-grey w-0 h-12 md:h-24"></div>
         <Button path={"/about"}> {"{Read More}"} </Button>
       </section>
 
       {/*portfolio section */}
-      <section className="mt-[150px] bg-black" id="portfolio">
+      <section
+        className="ms-[20px] mt-[100px] md:mt-[150px] bg-black"
+        id="portfolio">
         <SectionHeader
           icon="(!)"
           title="&lt;portfolio&gt;"
@@ -169,7 +190,7 @@ const getHome = () => {
 
       {/*services section */}
       <section
-        className="mt-[150px] bg-black flex flex-col items-center mb-10"
+        className="ms-[20px] mt-[100px] md:mt-[150px] bg-black flex flex-col items-center mb-10"
         id="services">
         <SectionHeader
           icon="{#}"
@@ -195,7 +216,7 @@ const getHome = () => {
 };
 
 const Home = () => {
-  return <Layout activePage={"home"}>{getHome()}</Layout>;
+  return <Layout activePage={"home"}>{<GetHome />}</Layout>;
 };
 
 export default Home;
