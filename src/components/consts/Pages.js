@@ -1,5 +1,5 @@
 const pages = [
-  { id: 1, name: "Home", route: "home" },
+  { id: 1, name: "Home", route: "" },
   { id: 2, name: "About", route: "about" },
   { id: 3, name: "Portfolio", route: "portfolio" },
   { id: 4, name: "Resume", route: "resume" },

@@ -22,7 +22,7 @@ const Footer = ({ activePage }) => {
                       to={`${
                         activePage === page.name.toLowerCase()
                           ? "#"
-                          : "/" + page.name.toLowerCase()
+                          : "/" + page.route.toLowerCase()
                       }`}
                       className={`px-[20px] no-underline ease duration-200 transition-colors ${
                         activePage === page.name.toLowerCase()
