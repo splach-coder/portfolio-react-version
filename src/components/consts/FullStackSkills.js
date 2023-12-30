@@ -5,7 +5,7 @@ const fullStackSkills = [
     id: nanoid(),
     skill: "Full-Stack Framework",
     description:
-      "Proficiency in Express.js, Django, or Ruby on Rails for building scalable server-side applications.",
+      "Proficiency in Express.js or Laravel for building scalable server-side applications.",
     icon: "🚀",
   },
   {

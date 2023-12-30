@@ -30,7 +30,7 @@ const getContact = () => {
               {"{ADRESS}"}
             </span>
             <span className="text-desc leading-[20px] md:leading-[31px] md:text-[31px] text-yellow">
-              {"MORROCO, MARRAKECH"}
+              {"MOROCCO, MARRAKECH"}
             </span>
           </div>
         </div>

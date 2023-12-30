@@ -40,10 +40,9 @@ const GetAbout = () => {
               initial="hidden"
               animate={controls}
               className="md:text-smallTitle text-yellow md:leading-[40px] text-center text-desc leading-[20px]">
-              ...I have over 12 years of experience in web development, with a
-              strong background in both front-end and back-end technologies.
-              Nullam facilisis mollis mauris, vitae mollis leo viverra eu. In
-              cursus commodo interdum;
+              ...Hey, I'm Anas Benabbou, a web developer who loves building
+              websites. I enjoy turning cool ideas into sites that work well and
+              look awesome. Let's create something amazing in the digital world!
             </motion.div>
             <motion.div
               variants={variants.paragraphVariants}
@@ -51,9 +50,8 @@ const GetAbout = () => {
               initial="hidden"
               animate={controls}
               className=" text-[16px] md:text-desc text-white md:leading-[16px] leading-[20px] text-center">
-              …lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              facilisis mollis mauris, vitae mollis leo viverra eu. In cursus
-              commodo interdum. Duis vitae ex massa. Quisque luctus diam.
+              ...I have over 3 years of experience in web development, with a
+              strong background in both front-end and back-end technologies.
             </motion.div>
           </div>
         </div>
@@ -65,7 +63,7 @@ const GetAbout = () => {
         </div>
         <div className="grid grid-cols-12">
           {softSkillsArray.map((skill) => (
-            <SmallSection             
+            <SmallSection
               motion={motion}
               variants={variants}
               id={skill.id}

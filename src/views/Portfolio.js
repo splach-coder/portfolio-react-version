@@ -65,10 +65,13 @@ const GetPortfolio = () => {
               initial="hidden"
               animate={controls}
               className=" text-[16px] md:text-desc text-yellow md:leading-[16px] leading-[20px] text-center">
-              …lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              facilisis mollis mauris, vitae mollis leo viverra eu. In cursus
-              commodo interdum. Duis vitae ex massa. Quisque luctus diam.
+              …Excited to showcase my portfolio! Whether you need a sleek
+              website, innovative app, or a complete digital makeover, I've got
+              you covered. Let's collaborate and make your project stand out.
+              Contact me today and let's bring your ideas to life!
             </motion.div>
+
+           
 
             <div className="hidden md:flex mt-5 gap-10">
               {projects.map((project) => (

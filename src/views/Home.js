@@ -153,7 +153,7 @@ const GetHome = () => {
             initial="hidden"
             animate={controls}
             className="col-span-12 md:col-span-6 underline text-white md:border-e-[1px] md:border-grey text-[18px] leading-[20px] md:text-smallTitle p-[20px] md:p-[60px] md:leading-[40px]">
-            ...I have over 1 years of experience in web development, with a
+            ...I have over 3 years of experience in web development, with a
             strong background in both front-end and back-end technologies;
           </motion.div>
           <motion.div
@@ -162,14 +162,7 @@ const GetHome = () => {
             initial="hidden"
             animate={controls}
             className="col-span-12 border-y-[1px] md:border-y-0 border-grey md:col-span-6 text-[18px] leading-[18px] md:text-desc text-yellow p-[20px] md:p-[60px] md:leading-[20px]">
-            …curabitur sit amet luctus tortor, sit amet ultrices ante. Maecenas
-            convallis dui arcu, et tempor felis consectetur vel. Vestibulum ante
-            ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-            curae; Sed id velit ex. Cras ultricies nisi eget sem mollis, a
-            maximus felis laoreet. Nam eget ultricies urna, vel ullamcorper
-            arcu. Quisque feugiat rhoncus arcu, a tincidunt arcu lacinia ac.
-            Maecenas molestie vel ante in finibus. Sed sit amet ligula eros. In
-            hac habitasse platea dictumst;
+            Hey, I'm Anas Benabbou, a 20-year-old who loves building websites. I enjoy turning cool ideas into sites that work well and look awesome. Let's create something amazing in the digital world!
           </motion.div>
         </div>
         <div className="border-s border-grey w-0 h-12 md:h-24"></div>

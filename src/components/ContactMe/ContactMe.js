@@ -85,7 +85,7 @@ const ContactMe = () => {
       <SectionHeader
         icon="{*}"
         title="&lt;Contact me&gt;"
-        desc="...Unlock the gateway to connection. Reach out and let's embark on a transformative journey together."
+        desc="...Ready to bring your digital ideas to life? Let's chat and turn your vision into a reality! Contact me now to start the journey."
       />
 
       <div className="w-full pb-5 flex flex-col items-center">

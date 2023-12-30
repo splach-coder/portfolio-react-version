@@ -87,20 +87,25 @@ const GetResume = () => {
             initial="hidden"
             animate={controls}
             className="text-[16px] md:text-desc text-yellow md:leading-[16px] leading-[20px] text-center max-w-[350px] md:max-w-3xl">
-            …lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            facilisis mollis mauris, vitae mollis leo viverra eu. In cursus
-            commodo interdum. Duis vitae ex massa. Quisque luctus diam.
+            …Explore my journey in web development through my resume. It's a
+            snapshot of my commitment to learning and growing in the field.
           </motion.div>
+
+          <div className="mt-16 md:mt-28 text-center rotate-90">
+            <span className="text-[31px] leading-[31px] p-[15px]">
+              <a href="#experinces">{"==>"}</a>
+            </span>
+          </div>
         </div>
       </section>
 
-      <section className="ms-[20px] mt-[100px] md:mt-[150px] bg-black">
+      <section
+        id="experinces"
+        className="ms-[20px] mt-[100px] md:mt-[150px] bg-black">
         <SectionHeader
           icon="{#}"
           title="&lt;experience&gt;"
-          desc=" ...Ignite your brand with bespoke services. Experience
-          transformative
-          journeys that leave a lasting emotional impact."
+          desc=" ...Take a peek into my projects—they're stories of challenges met and conquered. From user interfaces to backend systems, my experiences speak to practical skills honed in the real world."
         />
 
         <div className="grid grid-cols-12 w-full mt-[50px]">
@@ -114,7 +119,7 @@ const GetResume = () => {
         <SectionHeader
           icon="{#}"
           title="&lt;skills&gt;"
-          desc="...Ignite your brand with bespoke services. Experience transformative journeys that leave a lasting emotional impact."
+          desc="...Check out my toolbox of skills—HTML, CSS, JavaScript, React, Node.js, and more. These are the tools I use to create websites that are both user-friendly and innovative. Let's use them to bring your ideas to life!"
         />
 
         <div className="grid grid-cols-12 border-b border-grey">
