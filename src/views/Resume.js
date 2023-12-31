@@ -24,8 +24,18 @@ const GetExperience = ({ service }) => {
       key={service.id}
       className="col-span-12 grid grid-cols-12 border-t border-grey ">
       <div className="col-span-12 md:col-span-7 flex justify-between border-b md:border-b-0 md:border-r border-grey p-[20px] md:p-[50px]">
-        <div className="text-white">{`{${service.startDate}}`}</div>
-        <div className="">
+        <motion.div
+          variants={variants.paragraphVariants}
+          ref={ref}
+          initial="hidden"
+          animate={controls}
+          className="text-white">{`{${service.startDate}}`}</motion.div>
+        <motion.div
+          variants={variants.paragraphVariants}
+          ref={ref}
+          initial="hidden"
+          animate={controls}
+          className="">
           <div className="flex text-navigation leading-[22px] md:text-[48px] md:leading-[48px] text-white">
             {`< `}
             <span className="text-purple">
@@ -38,7 +48,7 @@ const GetExperience = ({ service }) => {
             </span>
             {` >`}
           </div>
-        </div>
+        </motion.div>
       </div>
       <motion.div
         variants={variants.paragraphVariants}
