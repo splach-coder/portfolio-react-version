@@ -1,5 +1,5 @@
 section.bg-section {
-    background: url('../images/bg.jpeg');
+    background: url('../images/bg.webp');
     background-size: contain;
     background-attachment: fixed;
     overflow-y: hidden;

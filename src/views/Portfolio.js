@@ -71,8 +71,6 @@ const GetPortfolio = () => {
               Contact me today and let's bring your ideas to life!
             </motion.div>
 
-           
-
             <div className="hidden md:flex mt-5 gap-10">
               {projects.map((project) => (
                 <button

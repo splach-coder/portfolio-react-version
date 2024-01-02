@@ -37,17 +37,17 @@ const Footer = ({ activePage }) => {
             </ul>
           </div>
           <div className="col-span-6 md:col-span-2 flex flex-col md:flex-row gap-3 items-end md:items-start md:justify-center text-desc leading-[20px] no-underline text-purple">
-            <a href="https://github.com/splach-coder">
+            <a href="https://github.com/splach-coder" ariaLabel="welcome to visite my github">
               <div className="text-purple">
                 <FontAwesomeIcon icon={faGithub} />
               </div>
             </a>
-            <a href="https://instagram.com/a.iverson73?igshid=ZDc4ODBmNjlmNQ==">
+            <a href="https://instagram.com/a.iverson73?igshid=ZDc4ODBmNjlmNQ==" ariaLabel="welcome to visite my instagram">
               <div className="text-purple">
                 <FontAwesomeIcon icon={faInstagram} />
               </div>
             </a>
-            <a href="https://twitter.com/anasbenbow123?t=r9rg2US37a6XNLKxCZZ1gw&s=08">
+            <a href="https://twitter.com/anasbenbow123?t=r9rg2US37a6XNLKxCZZ1gw&s=08" ariaLabel="welcome to visite my twitter">
               <div className="text-purple">
                 <FontAwesomeIcon icon={faTwitter} />
               </div>
